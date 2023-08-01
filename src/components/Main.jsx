@@ -18,6 +18,7 @@ function Main ({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onDeleteC
         dataCard.forEach(data => data.myid = dataUser._id)
         setCards(dataCard);
       }) 
+      .catch((error => console.error(`Ошибка ${error}`)))
     }, [])
 
        
