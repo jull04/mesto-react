@@ -1,4 +1,4 @@
- https://jull04.github.io/mesto-react/
+Project link: https://jull04.github.io/mesto-react/
 
 # Getting Started with Create React App
 
