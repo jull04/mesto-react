@@ -2,7 +2,7 @@ import React from 'react';
 
 function ImagePopup ({card, onClose, isOpen}) {
   return (
-    <div className={`popup popup_img ${isOpen && "popup__visible"}`}>
+    <div className={`popup popup_img ${isOpen && "popup__visible"}`} onClick={onClose}>
     <form className="popup__content-img" name="img-form">
       <button
         className="popup__close popup__close_img"
