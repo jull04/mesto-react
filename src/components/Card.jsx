@@ -5,7 +5,11 @@ import Like from './Like';
 function Card ({card, onCardClick, onDeleteCard, onCardLike}) {
 
   const currentUser = React.useContext(CurrentUserContext);
-  
+  const isOwn = currentUser._id===card.owner._id; 
+
+  function handleClick() {
+    onCardClick(card);
+  }
 
   return (
     <div className="cards__item">
@@ -13,9 +17,9 @@ function Card ({card, onCardClick, onDeleteCard, onCardLike}) {
         src={card.link} 
         className="cards__image" 
         alt={card.name} 
-        onClick={() => onCardClick({link: card.link, name: card.name})}
+        onClick={handleClick}
         />
-      {currentUser._id===card.owner._id  && <button type="button" className="cards__trash" aria-label="Удалить" onClick={() => onDeleteCard(card._id)}/>}
+      {isOwn  && <button type="button" className="cards__trash" aria-label="Удалить" onClick={() => onDeleteCard(card._id)}/>}
       <div className="cards__description">
         <h2 className="cards__title">{card.name}</h2>
         <div className="cards__like-container">

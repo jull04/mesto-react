@@ -14,12 +14,12 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
 
   function resetClose(){
     onClose()
-    reset(values)  
+    reset({firstname: currentUser.name, job: currentUser.about})   
   }
 
   function handleSubmit(evt){
     evt.preventDefault();
-    onUpdateUser(values, reset)
+    onUpdateUser({firstname: values.firstname, job: values.job}, reset) 
   }
 
   return (

@@ -71,7 +71,7 @@ function App() {
               state.map((c) => (c._id === card._id ? res : c))
             )
           })
-          .catch((err) => console.log(err));
+          .catch(error => console.log(`Ошибка снятия лайка ${error}`));
       } else {
         api.putLike(card._id, true)
           .then((res) => {
@@ -79,12 +79,11 @@ function App() {
               state.map((c) => (c._id === card._id ? res : c))
             )
           })
-          .catch((err) => console.log(err));
+          .catch(error => console.log(`Ошибка постановки лайка ${error}`)); 
     }
   }
 
   function handleDeleteSubmit() {
-    // evt.preventDefault();
     api.deleteCard(deleteCardId)
       .then(() => {
         setCards((state) =>
@@ -104,7 +103,7 @@ function App() {
         closeAllPopups()
         reset()
       })
-    .catch((err) => console.log(`Ошибка редактирования профиля ${err}`));
+    .catch((error) => console.log(`Ошибка редактирования профиля ${error}`));
   }
 
   function handleUpdateAvatar(dataUser, reset){
@@ -114,7 +113,7 @@ function App() {
       closeAllPopups()
       reset()
     })
-    .catch((err) => console.log(`Ошибка обновления аватара ${err}`));
+    .catch((error) => console.log(`Ошибка обновления аватара ${error}`));
   }
 
   function handleAddPlace(cardInfo, reset){
@@ -124,7 +123,7 @@ function App() {
       closeAllPopups()
       reset()
     })
-    .catch((err) => console.log(`Ошибка добавления карточки ${err}`));
+    .catch((error) => console.log(`Ошибка добавления карточки ${error}`));
   }
   
   return (
