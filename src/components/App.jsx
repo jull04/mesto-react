@@ -64,7 +64,6 @@ function App() {
 
   function handleCardLike (card) {
       const isLike = card.likes.some((element) => currentUser._id === element._id);
-      console.log(card._id)
       if (isLike) {
         api.deleteLike(card._id)
           .then((res) => {

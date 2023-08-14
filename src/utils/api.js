@@ -66,7 +66,6 @@ class Api {
     }
 
     putLike(cardId, isLiked) {
-        console.log(isLiked)
         if (isLiked) {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
           method: 'PUT',
