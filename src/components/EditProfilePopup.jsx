@@ -1,5 +1,5 @@
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import useFormValidation from "../utils/useFormValidation";
+import useFormValidation from "../hooks/useFormValidation";
 import PopupWithForm from "./PopupWithForm"
 import React from "react";
 
@@ -14,25 +14,25 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
 
   function resetClose(){
     onClose()
-    reset({firstname: currentUser.name, job: currentUser.about})  
+    reset(values)  
   }
 
   function handleSubmit(evt){
     evt.preventDefault();
-    onUpdateUser({firstname: values.firstname, job: values.job}, reset)
+    onUpdateUser(values, reset)
   }
 
   return (
     <PopupWithForm
-    name="edit"
-    title="Редактировать профиль"
-    btnText="Сохранить" 
-    isOpen={isOpen}
-    onClose={resetClose}
-    isValid={isValid}
-    onSubmit={handleSubmit}
+      name="edit"
+      title="Редактировать профиль"
+      btnText="Сохранить" 
+      isOpen={isOpen}
+      onClose={resetClose}
+      isValid={isValid}
+      onSubmit={handleSubmit}
     >
-    <input
+      <input
       id="name"
       name="firstname"
       className={`popup__input popup__input_type_name ${isInputValid.firstname === undefined || isInputValid.firstname ? '' : 'popup__input_type_error' }`}
@@ -43,9 +43,9 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
       required
       onChange={handleChange}
       value={values.firstname ? values.firstname : ''}
-    />
-    <span className="name-error popup__error popup__error_visible">{errors.firstname}</span>
-    <input
+      />
+      <span className="name-error popup__error popup__error_visible">{errors.firstname}</span>
+      <input
       id="job"
       className={`popup__input popup__input_type_job" ${isInputValid.job === undefined || isInputValid.job ? '' : 'popup__input_type_error' }`}
       type="text"
@@ -56,9 +56,9 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
       required
       onChange={handleChange}
       value={values.job ? values.job : ''}
-    />
-    <span className="job-error popup__error popup__error_visible">{errors.job}</span>
-  </PopupWithForm>
+      />
+      <span className="job-error popup__error popup__error_visible">{errors.job}</span>
+    </PopupWithForm>
   )
 }
 

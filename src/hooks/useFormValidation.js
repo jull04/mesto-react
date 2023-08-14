@@ -31,8 +31,8 @@ function useFormValidation() {
   function reset(data = {}) {
     setValues(data)
     setErrors({})
-    setIsInputValid(false)
-    setIsValid({})
+    setIsInputValid({})
+    setIsValid(false)
   }
 
   const setValue = React.useCallback((name, value) => {

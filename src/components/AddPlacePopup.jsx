@@ -1,4 +1,4 @@
-import useFormValidation from "../utils/useFormValidation";
+import useFormValidation from "../hooks/useFormValidation";
 import PopupWithForm from "./PopupWithForm"
 
 function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
@@ -12,7 +12,7 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddPlace({title: values.title, link: values.link}, reset);
+    onAddPlace(values, reset);
   }
 
   return(
@@ -31,6 +31,8 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
       type="text"
       name="title"
       placeholder="Название"
+      minLength="2"
+      maxLength="30"
       required
       onChange={handleChange}
       value={values.title ? values.title : ''}
