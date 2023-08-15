@@ -13,7 +13,7 @@ function PopupWithForm ({name, title, btnText, children, isOpen, onClose, onSubm
         <h3 className="popup__title">{title}</h3>
         {children}
        {/* не поняла в чем именно ошибка, если форма невалидна, то кнопка не активна, т.к. добавляется класс 'popup__submit_disabled' */}
-        <button  type="submit" value="Сохранить" className={`popup__submit ${isValid ? '' : 'popup__submit_disabled'} `}>
+        <button disabled type="submit" value="Сохранить" className={`popup__submit ${isValid ? '' : 'popup__submit_disabled'} `}>
           {btnText}
         </button>
       </form>
