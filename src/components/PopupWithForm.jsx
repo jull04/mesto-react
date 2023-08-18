@@ -12,7 +12,11 @@ function PopupWithForm ({name, title, btnText, children, isOpen, onClose, onSubm
         />
         <h3 className="popup__title">{title}</h3>
         {children}
-        <button disabled={!isValid} type="submit" value="Сохранить" className={`popup__submit ${isValid ? '' : 'popup__submit_disabled'} `}>
+        <button 
+        disabled={!isValid} 
+        type="submit" 
+        value="Сохранить" 
+        className={`popup__submit ${isValid ? '' : 'popup__submit_disabled'}`}>
           {btnText}
         </button>
       </form>

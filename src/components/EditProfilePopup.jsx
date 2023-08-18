@@ -33,29 +33,29 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
       onSubmit={handleSubmit}
     >
       <input
-      id="name"
-      name="firstname"
-      className={`popup__input popup__input_type_name ${isInputValid.firstname === undefined || isInputValid.firstname ? '' : 'popup__input_type_error' }`}
-      type="text"
-      placeholder="Имя"
-      minLength={2}
-      maxLength={40}
-      required
-      onChange={handleChange}
-      value={values.firstname ? values.firstname : ''}
+        id="name"
+        name="firstname"
+        className={`popup__input popup__input_type_name ${isInputValid.firstname === undefined || isInputValid.firstname ? '' : 'popup__input_type_error' }`}
+        type="text"
+        placeholder="Имя"
+        minLength={2}
+        maxLength={40}
+        required
+        onChange={handleChange}
+        value={values.firstname ? values.firstname : ''}
       />
       <span className="name-error popup__error popup__error_visible">{errors.firstname}</span>
       <input
-      id="job"
-      className={`popup__input popup__input_type_job" ${isInputValid.job === undefined || isInputValid.job ? '' : 'popup__input_type_error' }`}
-      type="text"
-      name="job"
-      placeholder="О себе"
-      minLength={2}
-      maxLength={200}
-      required
-      onChange={handleChange}
-      value={values.job ? values.job : ''}
+        id="job"
+        className={`popup__input popup__input_type_job" ${isInputValid.job === undefined || isInputValid.job ? '' : 'popup__input_type_error' }`}
+        type="text"
+        name="job"
+        placeholder="О себе"
+        minLength={2}
+        maxLength={200}
+        required
+        onChange={handleChange}
+        value={values.job ? values.job : ''}
       />
       <span className="job-error popup__error popup__error_visible">{errors.job}</span>
     </PopupWithForm>
