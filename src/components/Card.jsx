@@ -18,7 +18,7 @@ function Card ({card, onCardClick, onDeleteCard, onCardLike}) {
         className="cards__image" 
         alt={card.name} 
         onClick={handleClick}
-        />
+      />
       {isOwn  && <button type="button" className="cards__trash" aria-label="Удалить" onClick={() => onDeleteCard(card._id)}/>}
       <div className="cards__description">
         <h2 className="cards__title">{card.name}</h2>

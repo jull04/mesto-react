@@ -9,7 +9,7 @@ class Api {
       if (res.ok) {
         return res.json();
       }
-        return Promise.reject(`Ой! Ошибка: ${res.status}`);
+      return Promise.reject(`Ой! Ошибка: ${res.status}`);
     }
 
     getInfo() {

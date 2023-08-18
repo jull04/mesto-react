@@ -41,7 +41,7 @@ function Main ({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onDeleteC
                 card={data}
                 key={data._id}
                 onCardClick={onCardClick}
-                onDeleteCard = {onDeleteCard}
+                onDeleteCard={onDeleteCard}
                 onCardLike={onCardLike}
               />
             )
@@ -50,5 +50,5 @@ function Main ({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, onDeleteC
       </main>
   )
 }
-  
+
 export default Main

@@ -31,7 +31,6 @@ function App() {
     .catch((error => console.error(`Ошибка ${error}`)))
   }, [])
 
-
   function handleEditProfileClick() {
     setEditPopupOpen(true)
   }
@@ -43,7 +42,7 @@ function App() {
   function handleEditAvatarClick() {
     setAvatarPopupOpen(true)
   }
- 
+
   function handleCardClick(card) {
     setSelectedCard(card);
     setImagePopup(true);
@@ -63,46 +62,46 @@ function App() {
   }
 
   function handleCardLike (card) {
-      const isLike = card.likes.some((element) => currentUser._id === element._id);
-      if (isLike) {
-        api.deleteLike(card._id)
-          .then((res) => {
-            setCards((state) =>
-              state.map((c) => (c._id === card._id ? res : c))
-            )
-          })
-          .catch(error => console.log(`Ошибка снятия лайка ${error}`));
-      } else {
-        api.putLike(card._id, true)
-          .then((res) => {
-            setCards((state) =>
-              state.map((c) => (c._id === card._id ? res : c))
-            )
-          })
-          .catch(error => console.log(`Ошибка постановки лайка ${error}`)); 
+    const isLike = card.likes.some((element) => currentUser._id === element._id);
+    if (isLike) {
+      api.deleteLike(card._id)
+      .then((res) => {
+        setCards((state) =>
+          state.map((c   ) => (c._id === card._id ? res : c))
+        )
+      })
+      .catch(error => console.log(`Ошибка снятия лайка ${error}`));
+    } else {
+      api.putLike(card._id, true)
+      .then((res) => {
+        setCards((state) =>
+          state.map((c) => (c._id === card._id ? res : c))
+        )
+      })
+      .catch(error => console.log(`Ошибка постановки лайка ${error}`)); 
     }
   }
 
   function handleDeleteSubmit() {
     api.deleteCard(deleteCardId)
-      .then(() => {
-        setCards((state) =>
-          state.filter((card) => {
-            return card._id !== deleteCardId;
-          })
-        );
-        closeAllPopups();
-      })
-      .catch((error => console.error(`Ошибка удаления карточки ${error}`))) 
+    .then(() => {
+      setCards((state) =>
+        state.filter((card) => {
+          return card._id !== deleteCardId;
+        })
+      );
+      closeAllPopups();
+    })
+    .catch((error => console.error(`Ошибка удаления карточки ${error}`))) 
   }
 
   function handleUpdateUser(dataUser, reset) {
     api.setUserInfo(dataUser)
-      .then(res => {
-        setCurrentUser(res);
-        closeAllPopups()
-        reset()
-      })
+    .then(res => {
+      setCurrentUser(res);
+      closeAllPopups()
+      reset()
+    })
     .catch((error) => console.log(`Ошибка редактирования профиля ${error}`));
   }
 
@@ -125,7 +124,7 @@ function App() {
     })
     .catch((error) => console.log(`Ошибка добавления карточки ${error}`));
   }
-  
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page__content">
