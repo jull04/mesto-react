@@ -10,7 +10,7 @@ function EditAvatarPopup ({isOpen, onClose, onUpdateAvatar}) {
     onClose()
     reset()
   }
-    
+
   function handleSubmit(evt) {
     evt.preventDefault();
     onUpdateAvatar(values, reset);

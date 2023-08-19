@@ -37,7 +37,7 @@ function useFormValidation() {
 
   const setValue = React.useCallback((name, value) => {
     setValues((oldValues) => {
-      return {...oldValues, [name]: value, }
+      return {...oldValues, [name]: value,}
     })
   }, [])
 

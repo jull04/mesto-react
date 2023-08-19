@@ -11,7 +11,7 @@ function ImagePopup ({card, onClose, isOpen}) {
         onClick={onClose}
       />
       <figure className="popup__figure">
-        <img className="popup__img" src={card.link ? card.link : '#'}  alt={card.name ? `Изображение ${card.name}` : '#'} />
+        <img className="popup__img" src={card.link ? card.link : '#'}  alt={card.name ? `Изображение ${card.name}` : '#'}/>
         <figcaption className="popup__description">{card.name}</figcaption>
       </figure>
     </form>

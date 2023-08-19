@@ -7,7 +7,7 @@ function DeletePopupCard ({isOpen, onClose, onCardDelete, card}) {
     evt.preventDefault();
     onCardDelete(card);
   } 
-    
+
   return(
     <PopupWithForm
       name="delete"
