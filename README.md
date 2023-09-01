@@ -1,5 +1,12 @@
-Project link: https://jull04.github.io/mesto-react/
+## Проект: Mesto на REACT
 
-About project: 
+## Ссылка на проект: https://jull04.github.io/mesto-react/
 
-Interactive page built with React where you can add photos, delete and like them.
+Mesto: интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.
+Использованные технологии
+
+## Используемые технологии
+* Проект реализован на React, структура проекта создана с помощью Create React App.
+* React Router
+* JavaScript, HTML, CSS
+* JSX
