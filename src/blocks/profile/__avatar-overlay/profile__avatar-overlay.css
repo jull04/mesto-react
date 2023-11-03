@@ -28,7 +28,6 @@
   opacity: 0;
 }
 
-
 .profile__avatar-overlay:hover::before {
   opacity: 1;
   transition: opasity .3s linear;
@@ -37,6 +36,6 @@
 
 @media  screen and (max-width: 767px) {
   .profile__avatar-overlay {
-    margin: 36px 79px 20px;
+    margin: 36px auto 20px;
   }
 }
